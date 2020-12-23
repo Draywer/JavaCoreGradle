@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'ru.idcore'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation project(":db")
+    implementation project(":service")
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class' : 'ru.idcore.Main'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
