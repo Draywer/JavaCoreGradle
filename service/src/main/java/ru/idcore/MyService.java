@@ -1,5 +1,9 @@
 package ru.idcore;
 
+import ru.idcore.Db;
+import ru.idcore.DbSetting;
+import ru.idcore.MyEntity;
+
 import java.util.UUID;
 
 public class MyService {

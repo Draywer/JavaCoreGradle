@@ -1,5 +1,5 @@
 rootProject.name = 'JavaCoreGradle'
 include 'api'
-include 'service'
 include 'db'
+include 'service'
 
